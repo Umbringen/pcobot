@@ -52,7 +52,7 @@ class PcoServicesPlugin(WillPlugin):
 
     @respond_to("(!teams|!team)(?P<pco_team>.*?(?=(?:\?)|$))")
     def pco_team_lookup(self, message, pco_team):
-        """!team <team name> | returns a list of people serving on the team"""
+        """!team <team name>: returns a list of people serving on the team"""
         pco_team = pco_team.strip()
         if not pco_team:
             self.reply("Hold on I'll look up the teams for you.")
@@ -69,7 +69,7 @@ class PcoServicesPlugin(WillPlugin):
 
     @respond_to("who is (serving|scheduled) (on|for)( the)? (?P<pco_team>[\w ]+) team\s?(?P<pco_date>.*?(?=(?:\'|\?)|$))\??")
     def pco_team_schedule_lookup(self, message, pco_team, pco_date):
-        """ !serving / !scheduled <team name> <date> | "who is serving|scheduled on the <team name> team <date>" | looks up a [team name] and displays its confirmed and
+        """ !serving / !scheduled <team name> <date> | "who is serving|scheduled on the <team name> team <date>": looks up a [team name] and displays its confirmed and
         unconfirmed members for a given date"""
         pco_team = pco_team.strip()
         self.reply("Hold on; I'll look up that team's schedule for you.")
