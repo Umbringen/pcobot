@@ -3,6 +3,7 @@ from will.decorators import respond_to, periodic, hear, randomly, route, rendere
 from plugins.pco import msg_attachment, announcements, live
 import json
 import logging
+from datetime import datetime
 
 
 class PcoWebhook(WillPlugin):
@@ -10,11 +11,10 @@ class PcoWebhook(WillPlugin):
 
     @route("/pco/webhook", method='POST')
     def pco_webhook_endpoint(self):
-        print("Got webhook")
         logging.info("Got a webhook")
-        data = self.request.json
-        self.parse_pco_webhook(data)
-        return "Successfully recieved webhook!"
+        data = self.request.json # This is the payload
+        self.add_to_schedule(when=datetime.now(),item=self.parse_pco_webhook(data))  # Send it to my helper method
+        return "Successfully recieved webhook!" # Send this back to PCO. It's not necessary, but helps with troubleshooting.
 
     def parse_pco_webhook(self, data):
         """Parsing should be done here and passed to other methods to deal with the event."""
