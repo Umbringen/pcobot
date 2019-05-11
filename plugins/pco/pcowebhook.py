@@ -3,16 +3,28 @@ from will.decorators import respond_to, periodic, hear, randomly, route, rendere
 from plugins.pco import msg_attachment, announcements, live
 import json
 import logging
+from datetime import datetime
 
 
 class PcoWebhook(WillPlugin):
     """pcowebhook is for catching and dealing with Planning Center Webhooks"""
+
+    @route("/slack/webhook", method='POST')
+    def pco_webhook_endpoint(self):
+        print("Got Slack webhook")
+        logging.info("Got a webhook")
+        data = self.request.json
+        print(data)
+        # self.add_to_schedule(when=datetime.now(), item=self.parse_pco_webhook(data))
+        # self.parse_pco_webhook(data)
+        return "Successfully recieved webhook!"
 
     @route("/pco/webhook", method='POST')
     def pco_webhook_endpoint(self):
         print("Got webhook")
         logging.info("Got a webhook")
         data = self.request.json
+        # self.add_to_schedule(when=datetime.now(), item=self.parse_pco_webhook(data))
         self.parse_pco_webhook(data)
         return "Successfully recieved webhook!"
 
