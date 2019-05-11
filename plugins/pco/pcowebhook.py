@@ -17,7 +17,7 @@ class PcoWebhook(WillPlugin):
         print(data)
         # self.add_to_schedule(when=datetime.now(), item=self.parse_pco_webhook(data))
         # self.parse_pco_webhook(data)
-        return "Successfully recieved webhook!"
+        return
 
     @route("/pco/webhook", method='POST')
     def pco_webhook_endpoint(self):
