@@ -55,9 +55,9 @@ def get_for_date(team, date_expression):
         for status in ['confirmed', 'unconfirmed']:
             msg += '\n\n{}:'.format(status.capitalize())
             for plan_person_tuple in team_members[status]:
-                msg += '\n- {}'.format(plan_person_tuple[0].name)
+                msg += '\n- {} | {} '.format(plan_person_tuple[0].name, plan_person_tuple[0].team_position_name)
                 if not is_specific:
-                    msg += ' ({})'.format(plan_person_tuple[1])
+                    msg += '({})'.format(plan_person_tuple[1])
     attachment_list.append(msg_attachment.
                            SlackAttachment(fallback=msg, text=msg))
     return attachment_list
