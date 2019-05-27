@@ -3,6 +3,7 @@ from will.decorators import respond_to, periodic, hear, randomly, route, rendere
 from plugins.pco import msg_attachment, announcements, live
 import json
 import logging
+import time
 
 
 class PcoWebhook(WillPlugin):
@@ -44,10 +45,17 @@ class PcoWebhook(WillPlugin):
                                                         button_text="Open in People",
                                                         button_url=pcoaddress)
             self.say("", channel=announcements.announcement_channel(self), attachments=attachment.slack())
+            return
 
     def live_service_updated(self, data):
         if announcements.announcement_is_enabled(self, announcement='live_service_update'):
             # pcoaddress = "https://people.planningcenteronline.com/people/" + data['id']
             meta_data = live.parse_live_hook(data)
             attachment = live.get_plan_item(meta_data['service_type'], meta_data['plan_id'], meta_data['item_id'])
+            time.sleep(8)
             self.say("", channel=announcements.announcement_channel(self), attachments=attachment.slack())
+            return
+
+
+if __name__ == "__main__":
+    pass
