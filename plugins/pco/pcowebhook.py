@@ -9,13 +9,15 @@ import time
 class PcoWebhook(WillPlugin):
     """pcowebhook is for catching and dealing with Planning Center Webhooks"""
 
-    @route("/pco/webhook", method='POST')
+    @route("/pco/webhook", method='POST', timeout=30)
     def pco_webhook_endpoint(self):
         print("Got webhook")
+        self.request.
         logging.info("Got a webhook")
         data = self.request.json
         self.parse_pco_webhook(data)
         return "Successfully recieved webhook!"
+
 
     def parse_pco_webhook(self, data):
         """Parsing should be done here and passed to other methods to deal with the event."""
