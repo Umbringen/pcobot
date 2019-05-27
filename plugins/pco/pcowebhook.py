@@ -52,7 +52,7 @@ class PcoWebhook(WillPlugin):
             # pcoaddress = "https://people.planningcenteronline.com/people/" + data['id']
             meta_data = live.parse_live_hook(data)
             attachment = live.get_plan_item(meta_data['service_type'], meta_data['plan_id'], meta_data['item_id'])
-            time.sleep(8)
+            time.sleep(10)
             self.say("", channel=announcements.announcement_channel(self), attachments=attachment.slack())
             return
 
