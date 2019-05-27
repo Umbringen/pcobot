@@ -12,7 +12,6 @@ class PcoWebhook(WillPlugin):
     @route("/pco/webhook", method='POST', timeout=30)
     def pco_webhook_endpoint(self):
         print("Got webhook")
-        self.request.
         logging.info("Got a webhook")
         data = self.request.json
         self.parse_pco_webhook(data)
