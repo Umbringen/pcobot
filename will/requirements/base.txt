@@ -21,7 +21,7 @@ pycrypto==2.6.1
 pygerduty==0.28
 pytz==2017.2
 # Moved to 3.13 for python 3.7
-PyYAML==3.13
+PyYAML==5.1
 regex==2017.9.23
 redis==2.10.6
 requests>=2.21.0
