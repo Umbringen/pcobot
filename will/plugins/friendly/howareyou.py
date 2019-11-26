@@ -15,7 +15,7 @@ RESPONSES = [
 
 class HowAreYouPlugin(WillPlugin):
 
-    @hear(r"^how are you\?")
+    @hear("^how are you\?")
     def how_are_you(self, message):
         now = datetime.datetime.now()
         context = {

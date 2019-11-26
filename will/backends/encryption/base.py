@@ -5,8 +5,8 @@ class WillBaseEncryptionBackend(object):
 
     @staticmethod
     def encrypt_to_b64(raw):
-        raise NotImplementedError
+        raise NotImplemented
 
     @staticmethod
     def decrypt_from_b64(enc):
-        raise NotImplementedError
+        raise NotImplemented

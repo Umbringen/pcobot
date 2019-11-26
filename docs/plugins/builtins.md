@@ -97,13 +97,8 @@ Here's an example with an ops team, and an admin team:
 # config.py
 
 ACL = {
-    "ops": ["U2A06UQHX", #steven
-            "UXHQU60A2", #levi
-            "UABC1234",  #susan
-    ],
-    "admins": [
-            "UDEF5678",  #wooh
-    ],
+    "ops": ["steven", "levi", "susan"],
+    "admins": ["wooh"],
 }
 ```
 
@@ -124,15 +119,6 @@ def terminate_ec2_instance(self, message, instance_id):
 
 Complex ACL behaviors, simple as that.
 
-### Determinig User ID's
-
-In slack the user ID can be found by visiting [this link](https://api.slack.com/methods/users.info/test), selecting your slack account from the dropdown,
-and then clicking your @name next to the `user` field.
-
-In rocketchat the user ID can by found by visiting the URI /account/tokens on your instance and generating a new (temporary) personal access token, the
-user ID will be presented with the new token, which can then be deleted.
-
-__NOTE__: As hipchat is end-of-life it is not supported and will be removed completely from Will in an upcoming release.
 
 ## Access settings and config
 

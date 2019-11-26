@@ -20,7 +20,7 @@ class IOBackend(PubSubMixin, SleepMixin, SettingsMixin, object):
     required_settings = []
 
     def bootstrap(self):
-        raise NotImplementedError("""A .bootstrap() method was not provided.
+        raise NotImplemented("""A .bootstrap() method was not provided.
 
         Bootstrap must provide a way to to have:
         a) self.normalize_incoming_event fired, or incoming events put into self.incoming_queue
@@ -36,7 +36,7 @@ class IOBackend(PubSubMixin, SleepMixin, SettingsMixin, object):
 
     def normalize_incoming_event(self, event):
         # Takes a raw event, converts it into a Message, and returns the normalized Message.
-        raise NotImplementedError
+        raise NotImplemented
 
     def handle_incoming_event(self, event):
         try:
@@ -50,7 +50,7 @@ class IOBackend(PubSubMixin, SleepMixin, SettingsMixin, object):
             ))
 
     def handle_outgoing_event(self, event):
-        raise NotImplementedError
+        raise NotImplemented
 
     def terminate(self):
         pass
