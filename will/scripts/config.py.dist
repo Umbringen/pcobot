@@ -148,7 +148,7 @@ FUZZY_REGEX_ALLOWABLE_ERRORS = 3
 
 # If will isn't accessible at localhost, you must set this for his keepalive to work.
 # Note no trailing slash.
-# PUBLIC_URL = "http://my-will.herokuapp.com"
+PUBLIC_URL = "http://ucf-pco.herokuapp.com"
 
 # The hipchat backend and room Will should talk to if the trigger is a webhook and he isn't told
 # a specific room.  Default is the first of IO_BACKENDS and ROOMS.
