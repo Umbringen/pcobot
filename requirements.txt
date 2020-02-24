@@ -4,8 +4,8 @@ requests_oauthlib
 bottle_session
 pypco
  #Using this fork because it has all the Planning Center Endpoints
--e git://github.com/pastorhudson/pypco.git#egg=pypco
-#-e git://https://github.com/billdeitrick/pypco.git#egg=pypco
+-e git://github.com/Umbringen/pypco.git
+#-e git://github.com/pastorhudson/pypco.git#egg=pypco
 -e git://github.com/pastorhudson/PCO-oauth2.git#egg=requests_oauth2
 
 -r will/requirements/base.txt
