@@ -1,6 +1,7 @@
 import pypco
 import os
 from plugins.pco import msg_attachment
+#adding this for testings
 from plugins.pco import birthday, address, phone_numbers, checkins, emails, msg_attachment, authenticate, forms, people
 
 pco = pypco.PCO(["WILL_PCO_APPLICATION_KEY"], ["WILL_PCO_API_SECRET"])
