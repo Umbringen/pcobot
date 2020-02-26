@@ -12,7 +12,7 @@ def get(message, app):
         fl_name = {'first_name': message.sender['source']['real_name'].split()[0],
                    'last_name': message.sender['source']['real_name'].split()[1]}
         app = app.lower().strip()
-        for x in pco.people.people.list(where=fl_name):
+        for x in pco.people.lists(where=fl_name):
             for email in x.rel.emails.list():
                 if message.sender['source']['email'] in email.address:
                     for apps in x.rel.apps.list():
