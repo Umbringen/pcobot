@@ -1,7 +1,7 @@
 import pypco
 import os
 from plugins.pco import msg_attachment
-pco = pypco.auth_config.PCOAuthConfig(os.environ["WILL_PCO_APPLICATION_KEY"], os.environ["WILL_PCO_API_SECRET"])
+pco = pypco.pco.PCO(os.environ["WILL_PCO_APPLICATION_KEY"], os.environ["WILL_PCO_API_SECRET"])
 
 
 # This checks to see if the credentials {"name": "", "email": ""} have access to the app
