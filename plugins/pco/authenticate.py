@@ -41,7 +41,7 @@ def get_apps(message):
                'last_name': message.sender['source']['real_name'].split()[1]}
     app_list = ""
     pcoaddress = ""
-    for x in pco.interate(where=fl_name):
+    for x in pco.interate('/people/v2/people', where=fl_name):
         pcoaddress = "https://people.planningcenteronline.com/people/" + x.id
         for apps in x.rel.apps.list():
             app_list += "\n" + apps.name
